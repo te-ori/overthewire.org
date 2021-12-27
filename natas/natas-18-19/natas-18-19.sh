@@ -1,8 +1,14 @@
 #!/bin/bash
+. ../natas.sh
 
 function hack() {
 	for i in {1..640} ; do
-		request $i
+		result=$(request $i 2>&1 | grep -Po "(?<=Password:\s)[\w\d]+")
+
+		if [ ! -z $result ] ; then
+			echo $(get-natas-url 19 "$result")
+			break
+		fi
 	done
 }
 
